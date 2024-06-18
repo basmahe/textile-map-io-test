@@ -105,10 +105,10 @@
                     
                     <!-- fact source button -->
 
-                    <a href="http://google.com"> <!-- replace -->
+                    <a id="fact-source-url" href="http://google.com" target="_blank"> <!-- replace -->
 
                         <button type="button" class="btn btn-outline-dark" id="fact-source-btn">
-                            More <!-- replace -->
+                            Visit <!-- replace -->
                         </button>
                     </a> 
 
@@ -130,6 +130,100 @@
 
 <!-- Bootstrap CSS Script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+    <script>
+    
+    // A. factTree fact card data object
+    let factTree = {
+
+        factOne : {
+            "header" : "Blue Line - Racine",
+            "title" : "Mark T. Skinner Elementary",
+            "text" : "Elementary School Train Stop",
+            "source" : "EMA",
+            "sourceURL" : "https://google.com",
+            "sourceBtnTxt" : "Visit",
+
+        },
+        factTwo : {
+            "header" : "Red Line - Clark/Division",
+            "title" : "Walter Payton College Prep",
+            "text" : "High School Train Stop",
+            "source" : "EMA",
+            "sourceURL" : "https://google.com",
+            "sourceBtnTxt" : "Visit",
+
+        },
+        factThree : {
+            "header" : "Purple Line - Noyes",
+            "title" : "Northwestern University Press",
+            "text" : "Doctoral Fellowship Train Stop",
+            "source" : "EMA",
+            "sourceURL" : "https://google.com",
+            "sourceBtnTxt" : "Visit",
+
+        }
+    }
+
+    // B. factTree data return
+    // * store UI text locations as variables
+    let factHeaderUI = document.getElementById("fact-header")
+    let factTitleUI = document.getElementById("fact-title")
+    let factTextUI = document.getElementById("fact-text")
+    let factSourceUI = document.getElementById("fact-source")
+    let factSourceURLUI = document.getElementById("fact-source-url")
+    let factSourceBtnTxtUI = document.getElementById("fact-source-btn")
+
+
+    // * return factTree data to UI on key press
+    // --- factOne -> UI Card
+    document.addEventListener("keydown", function(Event) {
+        if (Event.key == "q") {
+            
+            factHeaderUI.innerText = factTree.factOne.header
+            factTitleUI.innerText = factTree.factOne.title
+            factTextUI.innerText = factTree.factOne.text
+            factSourceUI.innerText = factTree.factOne.source
+            factSourceURLUI.setAttribute("src", factTree.factOne.sourceURL)
+            factSourceBtnTxtUI.innerText = factTree.factOne.sourceBtnTxt
+            console.log("factTree returned factOne data");  
+        }
+    });
+
+    // --- factTwo -> UI Card
+    document.addEventListener("keydown", function(Event) {
+        if (Event.key == "w") {
+            
+            factHeaderUI.innerText = factTree.factTwo.header
+            factTitleUI.innerText = factTree.factTwo.title
+            factTextUI.innerText = factTree.factTwo.text
+            factSourceUI.innerText = factTree.factTwo.source
+            factSourceURLUI.setAttribute("src", factTree.factTwo.sourceURL)
+            factSourceBtnTxtUI.innerText = factTree.factTwo.sourceBtnTxt
+            console.log("factTree returned factTwo data");  
+        }
+    });
+
+    // --- factThree -> UI Card
+    document.addEventListener("keydown", function(Event) {
+        if (Event.key == "e") {
+            
+            factHeaderUI.innerText = factTree.factThree.header
+            factTitleUI.innerText = factTree.factThree.title
+            factTextUI.innerText = factTree.factThree.text
+            factSourceUI.innerText = factTree.factThree.source
+            factSourceURLUI.setAttribute("src", factTree.factThree.sourceURL)
+            factSourceBtnTxtUI.innerText = factTree.factThree.sourceBtnTxt
+            console.log("factTree returned factThree data");  
+        }
+    });
+
+
+
+
+
+    </script>
 
 
   </body>
